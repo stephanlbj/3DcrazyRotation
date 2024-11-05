@@ -1,0 +1,92 @@
+.container{
+    width: 100vw;
+}
+
+
+.container .items{
+    position: absolute;
+    inset: 0 0 0 0;
+    pointer-events: none;
+    
+}
+
+.container .items > div{
+    position: absolute;
+  transition: 0.7s;
+    
+}
+
+.container .product{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    transition: 0.7s;
+    --left: 0px;
+}
+
+.container .product .soda{
+background: url(public/images/bg1.jpeg) var(--left) 0, url(/public/images/mockup.png);
+background-size: auto 100%;
+width: 140px;
+aspect-ratio: 2/4;
+background-blend-mode: multiply;
+mask-image: url(public/images/mockup.png);
+mask-size: auto 100%;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+transition: 0.7s;
+}
+
+.container .product:hover{
+    --left: -1000px;
+ transform: translateX(-50%) translateY(-40px);
+}
+
+
+.container .items > div:nth-child(1){
+  height: 170px;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  background-color: aqua;
+    
+}
+
+.container .items .item2 {
+    height: 170px;
+    width: 100px;
+    left: 10%;
+    transform: translateX(-50%);
+    bottom: -30px;
+    background-color: red;
+      
+  }
+
+  .container .items .item3 {
+    height: 170px;
+    width: 100px;
+    right: 10%; 
+    bottom: -30px;
+    background-color: green;
+      
+  }
+
+
+.container:has(.product:hover) .items > div:nth-child(1){
+    transform: translateX(-50%) translateY(100px);
+
+   
+}
+
+.container:has(.product:hover) .items > div:nth-child(2){
+    transform: translateX(-100px) translateY(100px);  
+}
+
+.container:has(.product:hover) .items > div:nth-child(3){
+    transform: translateX(100px) translateY(100px);  
+}
